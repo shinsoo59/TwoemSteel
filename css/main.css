@@ -1,0 +1,351 @@
+@charset "utf-8";
+
+/*main banner*/
+.main_banner {
+  width: 100%;
+  height: 99rem;
+  position: relative;
+}
+
+.slide1 {
+  background: url(../images/main/main_banner_01.png) center / cover no-repeat;
+}
+
+.slide2 {
+  background: url(../images/main/main_banner_02.png) center / cover no-repeat;
+}
+
+.slide3 {
+  background: url(../images/main/main_banner_03.png) no-repeat;
+  background-size: cover;
+}
+
+.main_banner .mo_slide_txt {
+  display: none;
+}
+
+.main_banner p,
+.main_banner p.mo_slide_txt {
+  color: #fff;
+  font-size: 2vw;
+  text-align: center;
+  position: absolute;
+  top: 39.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.main_banner p strong,
+.main_banner p.mo_slide_txt strong.mo_slide_txt {
+  display: block;
+  font-size: 4vw;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.main_banner p strong em,
+.main_banner p.mo_slide_txt strong.mo_slide_txt em.mo_slide_txt {
+  font-size: 4vw;
+  font-weight: 800;
+}
+
+div.swiper-button-prev,
+div.swiper-button-next {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+div.swiper-button-prev {
+  left: 26.4rem;
+}
+
+div.swiper-button-next {
+  right: 26.4rem;
+}
+
+div.swiper-button-next::after,
+div.swiper-button-prev::after {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+
+/*company intro*/
+.intro_inner {
+  width: 100%;
+  height: 56vw;
+  background: url(../images/main/intro_background.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.intro_inner a {
+  display: block;
+  width: 23.05vw;
+  height: 27.8vw;
+  opacity: 0;
+  transform: translateY(10rem);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.intro_inner a.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro_inner>a:nth-child(1) {
+  background: url(../images/main/intro_01.png) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  position: absolute;
+  top: 19%;
+  left: 13.9%;
+  transition: 0.5s linear;
+}
+
+.intro_inner>a:nth-child(2) {
+  background: url(../images/main/intro_02.png) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  position: absolute;
+  left: 37.1%;
+  bottom: 19%;
+  transition: 0.5s linear;
+}
+
+.intro_inner a p {
+  color: #fff;
+  font-size: 1vw;
+  line-height: 1.2;
+  margin: 98.5% 0 0 8%;
+}
+
+.intro_inner a p strong {
+  font-size: 2vw;
+  font-weight: 700;
+}
+
+.intro .intro_inner a:hover {
+  background-size: 120%;
+}
+
+.intro_inner .intro_txt {
+  width: 22%;
+  font-size: 3.2vmax;
+  font-weight: 600;
+  text-align: right;
+  position: absolute;
+  right: 12%;
+  bottom: 18%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro_inner a {
+    transition: none;
+  }
+}
+
+
+/*product*/
+.product {
+  margin-top: 20rem;
+}
+
+.product_inner {
+  width: 100%;
+  height: 83.8rem;
+}
+
+.product_inner h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tab_area .tab {
+  display: flex;
+  justify-content: center;
+  column-gap: 4.2rem;
+  margin: 3rem 0;
+  cursor: pointer;
+}
+
+.tab_area .tab>li {
+  color: #333;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  width: 33rem;
+  height: 5rem;
+  padding-top: 0.5%;
+  border: 0.3rem solid #333;
+  border-radius: 5rem;
+  transition: 0.5s linear;
+}
+
+.tab_area .tab>li.on {
+  color: #fff;
+  background-color: #333;
+}
+
+.tab_area .tab_content {
+  display: none;
+  position: relative;
+}
+
+.tab_area .tab_content .tab_txt {
+  display: block;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  position: absolute;
+  left: 6%;
+  bottom: 6rem;
+}
+
+.tab_area .tab>li:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.tab_area .tab_content .tab_txt b {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+}
+
+.tab_area .tab_content .tab_txt p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.tab_area .tab_content .tab_txt .product_more_btn {
+  display: block;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  width: 18%;
+  height: 4rem;
+  padding-top: 1rem;
+  border: 2px solid #fff;
+  border-radius: 5rem;
+  transition: 0.5s linear;
+}
+
+.tab_area .tab_content .tab_txt a:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+#tab1 {
+  width: 100%;
+  height: 67rem;
+  background: url(../images/main/product_01.png) center / cover no-repeat;
+}
+
+#tab2 {
+  width: 100%;
+  height: 67rem;
+  background: url(../images/main/product_02.png) center / cover no-repeat;
+}
+
+#tab3 {
+  width: 100%;
+  height: 67rem;
+  background: url(../images/main/product_03.png) center / cover no-repeat;
+}
+
+/*map*/
+.map_inner {
+  width: 100%;
+  max-width: 139.2rem;
+  height: auto;
+  margin: 20rem auto 25rem;
+}
+
+.map_content {
+  display: flex;
+  justify-content: center;
+}
+
+.map_inner h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.map_txt {
+  margin: 9.6rem 0 0 6.3rem;
+}
+
+.map_txt li,
+.map_txt li span {
+  display: flex;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.map_txt li:not(:last-child) p {
+  margin-left: 5.6rem;
+}
+
+.map_txt li:nth-child(2) {
+  margin: 4% 0;
+}
+
+.map_txt li p {
+  display: inline-block;
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.map_txt li p b {
+  font-size: 2rem;
+}
+
+.map_txt li:last-child div {
+  display: block;
+  font-weight: 500;
+  margin-left: 3rem;
+}
+
+.map_txt li:last-child div p:first-child {
+  margin-bottom: 2.5rem;
+}
+
+.map_txt li:last-child div i {
+  font-weight: 700;
+  margin-left: 4rem;
+}
+
+.map_txt li:last-child div p {
+  position: relative;
+}
+
+.map_txt li:last-child div p:first-child i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  background: url(../images/common/icon_car.png) center / 100% no-repeat;
+}
+
+.map_txt li:last-child div p:last-child i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  background: url(../images/common/icon_bus.png) center / 100% no-repeat;
+}
+
+.map_txt li:last-child b {
+  font-size: 2rem;
+}

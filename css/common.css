@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+/*프리텐다드*/
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-Thin.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-Thin.woff) format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-ExtraLight.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-ExtraLight.woff) format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-Light.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-Light.woff) format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-Regular.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-Regular.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-Medium.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-Medium.woff) format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-SemiBold.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-SemiBold.woff) format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-Bold.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-Bold.woff) format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-ExtraBold.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-ExtraBold.woff) format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url(../font/pretendard/Pretendard-Black.woff2) format('woff2'),
+    url(../font/pretendard/Pretendard-Black.woff) format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: 'Pretendard', sans-serif;
+  overflow-x: hidden;
+}
+.inner {
+  width: 100%;
+  max-width: 192rem;
+  margin: 0 auto;
+}
+
+/*header*/
+#header .header_inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 12rem;
+  position: relative;
+}
+
+#header .header_inner h1 {
+  padding: 2.3rem 0;
+}
+
+#header .header_inner h1 .mo_logo {
+  display: none;
+}
+
+#header .header_inner .site_map {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-top: 3.3rem;
+  position: relative;
+}
+
+#header .site_map span {
+  display: block;
+  width: 120%;
+  height: 0.2rem;
+  background-color: #333;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  opacity: 1;
+  transition: transform .3s linear, opacity .3s linear;
+}
+
+#header .site_map.open span:first-child {
+  transform: translate(-0.3rem, 0.9rem) rotate(45deg);
+}
+
+#header .site_map.open span:nth-child(2) {
+  opacity: 0;
+}
+
+#header .site_map.open span:last-child {
+  transform: translate(-0.3rem, -1.2rem) rotate(-45deg);
+}
+
+
+/*gnb*/
+#header #mo_gnb {
+  display: none;
+}
+
+#header .depth1,
+#header .mo_depth1 {
+  display: flex;
+}
+
+#header .depth1 li,
+#header .mo_depth1 li {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  position: relative;
+}
+
+#header .depth1>li>a,
+#header .mo_depth1>li>a {
+  display: block;
+  padding: 3.3rem 6.5rem;
+  transition: 0.3s linear;
+}
+
+#header #gnb .depth1>li:hover>a,
+#header #mo_gnb .mo_depth1>li:hover>a {
+  color: #119E59;
+}
+
+/*depth2*/
+#header .depth2,
+#header .mo_depth2 {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 9.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+#header .sub_bg {
+  display: none;
+  width: 100%;
+  height: 23.7rem;
+  background-color: #fff;
+  pointer-events: auto;
+  position: absolute;
+  top: 9.4rem;
+  left: 0;
+  z-index: 2;
+}
+
+#header .depth2 li {
+  width: 97%;
+  margin-left: 0.2rem;
+}
+
+#header .depth1 li:first-child .depth2 li:last-child,
+#header .depth1 li:nth-child(3) .depth2 li:not(:nth-child(2)) {
+  width: 100%;
+  margin-left: 0;
+}
+
+#header .depth1 li:nth-child(3) .depth2 li:nth-child(2) {
+  width: 70%;
+  margin-left: 1.1rem;
+}
+
+#header .depth2 li>a,
+#header .mo_depth2 li>a {
+  display: block;
+  color: #575757;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1.7rem 0;
+  transition: 0.3s linear;
+}
+
+#header .depth2 li:last-child>a,
+#header .mo_depth2 li:last-child>a {
+  padding-bottom: 2rem;
+}
+
+#header .depth2 li:nth-child(1)>a,
+#header .mo_depth2 li:nth-child(1)>a {
+  padding-top: 0;
+}
+
+#header .depth2 li:nth-child(1)::after,
+#header .mo_depth2 li:nth-child(1)::after {
+  content: "";
+  width: 6.7rem;
+  position: absolute;
+  top: 2.9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s linear;
+  width: 0;
+}
+
+#header .depth2 li:not(:nth-child(1))::after,
+#header .mo_depth2 li:not(:nth-child(1))::after {
+  content: "";
+  position: absolute;
+  top: 4.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s linear;
+  width: 0;
+}
+
+#header .depth2 li:hover::after,
+#header .mo_depth2 li:hover::after {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #119E59;
+}
+
+#header .depth2>li:hover>a,
+#header .mo_depth2>li:hover>a {
+  color: #119E59;
+}
+
+/*서브 비주얼*/
+#container .sub_visual{
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 600;
+  padding: 11.4rem 0;
+}
+
+#container .company{
+  background: url(../images/sub/intro/sub_banner.jpg) no-repeat;
+}
+#container .factory_banner{
+  background: url(../images/sub/factory/factory_sub_banner.png) no-repeat;
+}
+#container .product_banner{
+  background: url(../images/sub/product/sub_banner_product.png) no-repeat;
+}
+#container .costomer_banner{
+  background: url(../images/sub/costomer/sub_banner_costomer.png) no-repeat;
+}
+
+/*서브 메뉴*/
+#container .sub_menu ul{
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+#container .sub_menu ul li a{
+  display: block;
+  padding: 2.8rem 6rem;
+  transition: all 0.3s linear;
+}
+#container .sub_menu ul li a:hover{
+  color: #119E59;
+}
+#container .sub_menu ul li a.on{
+  color: #119E59;
+  border-bottom: 0.5rem solid #119E59;
+}
+
+/*fab*/
+.fab {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 5rem;
+  position: fixed;
+  right: 6rem;
+  z-index: 1;
+}
+
+.top {
+  bottom: 18rem;
+  background-color: #ddd;
+}
+
+.chat {
+  bottom: 6rem;
+  background-color: #119E59;
+  transition: 0.5s ease-out;
+}
+
+.top img {
+  padding: 3.3rem 2.8rem;
+}
+
+.chat span {
+  display: block;
+  position: relative;
+}
+
+.chat img {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.7rem;
+}
+
+.chat i {
+  opacity: 0;
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 600;
+  position: absolute;
+  top: 2.5rem;
+  left: -2.8rem;
+  transition: 0.5s ease-in-out;
+}
+
+.chat:hover {
+  width: 21rem;
+}
+
+.chat:hover i {
+  opacity: 1;
+  left: 4rem;
+}
+
+/*footer*/
+#footer {
+  width: 100%;
+  max-width: 192rem;
+  height: 30rem;
+  background-color: #266D4A;
+  margin-top: 20rem;
+}
+
+#footer .footer_inner {
+  width: 72vw;
+  height: auto;
+  position: relative;
+}
+
+#footer .fnb {
+  display: flex;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 8.9rem;
+}
+
+#footer .fnb li:nth-child(2) {
+  margin: 0 5.3rem;
+}
+
+#footer .address {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50.5rem;
+  margin-top: 4.5rem;
+}
+
+#footer .address address {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+#footer .address address:nth-child(2) a {
+  color: #fff;
+  margin: 0 2rem 0 2.5rem;
+}
+
+#footer .address p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+#footer .footer_inner>span {
+  position: absolute;
+  top: 11.1rem;
+  right: 0;
+}

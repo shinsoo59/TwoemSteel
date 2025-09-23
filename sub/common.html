@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="icon" href="images/common/icon_favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <title>투엠스틸</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <!--헤더-->
+    <header id="header">
+      <div class="header_inner inner">
+        <h1>
+          <a href="index.html">
+            <img src="images/common/logo.png" alt="투엠스틸 헤더 로고" class="web_logo">
+            <img src="images/common/mo_logo.png" alt="투엠스틸 헤더 로고" class="mo_logo">
+          </a>
+        </h1>
+        <!--gnb-->
+        <nav id="gnb">
+          <ul class="depth1">
+            <li>
+              <a href="#">투엠스틸</a>
+              <ul class="depth2">
+                <li>
+                  <a href="#">회사소개</a>
+                </li>
+                <li>
+                  <a href="#">회사연혁</a>
+                </li>
+                <li>
+                  <a href="#">인증자료</a>
+                </li>
+                <li>
+                  <a href="#">오시는 길</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">사업장안내</a>
+            </li>
+            <li>
+              <a href="#">제품안내</a>
+              <ul class="depth2">
+                <li>
+                  <a href="#">열연&#183;냉연</a>
+                </li>
+                <li>
+                  <a href="#">파이프</a>
+                </li>
+                <li>
+                  <a href="#">이형 자재</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">고객센터</a>
+              <ul class="depth2">
+                <li>
+                  <a href="#">공지사항</a>
+                </li>
+                <li>
+                  <a href="#">문의하기</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <nav id="mo_gnb">
+          <ul class="mo_depth1">
+            <li>
+              <a href="#">투엠스틸</a>
+              <ul class="mo_depth2">
+                <li>
+                  <a href="#">회사소개</a>
+                </li>
+                <li>
+                  <a href="#">회사연혁</a>
+                </li>
+                <li>
+                  <a href="#">인증자료</a>
+                </li>
+                <li>
+                  <a href="#">오시는 길</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">사업장안내</a>
+            </li>
+            <li>
+              <a href="#">제품안내</a>
+              <ul class="mo_depth2">
+                <li>
+                  <a href="#">열연&#183;냉연</a>
+                </li>
+                <li>
+                  <a href="#">파이프</a>
+                </li>
+                <li>
+                  <a href="#">이형 자재</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">고객센터</a>
+              <ul class="mo_depth2">
+                <li>
+                  <a href="#">공지사항</a>
+                </li>
+                <li>
+                  <a href="#">문의하기</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!--사이트맵-->
+        <a href="#" class="site_map">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      <div class="sub_bg"></div>
+    </header>
+    <!--메인컨텐츠는 여기서부터-->
+
+    <!--메인컨텐츠는 여기까지-->
+    <!--플로팅 버튼-->
+    <a href="main.html" class="top fab">
+      <img src="images/common/icon_top.png" alt="위로가기">
+    </a>
+    <a href="#" class="chat fab">
+      <span>
+        <img src="images/common/icon_chat.png" alt="문의하기">
+        <i>문의하기</i>
+      </span>
+    </a>
+    <!--푸터-->
+    <footer id="footer">
+      <div class="footer_inner inner">
+        <ul class="fnb">
+          <li>이용약관</li>
+          <li>개인정보취급방침</li>
+          <li>이용안내</li>
+        </ul>
+        <div class="address">
+          <address>주소: 부산 사상구 낙동대로 890</address>
+          <address>
+            <a href="tel">전화: 051-***-****</a>
+          </address>
+          <address>팩스: 051-***-****</address>
+          <p>copyright ⓒ twoemsteel co., ltd. all right reaerved.</p>
+        </div>
+        <span>
+          <img src="images/common/logo_footer.png" alt="투엠스틸 푸터로고">
+        </span>
+      </div>
+    </footer>
+  </div>
+  <script>
+    //서브메뉴
+    $(function () {
+      const NS = ".menu";
+      const $gnb = $("#gnb");
+      const $depth1 = $("#gnb .depth1");
+      const $allDepth2 = $("#gnb .depth1 > li > .depth2");
+      const $subBg = $(".sub_bg");
+      const $siteList = $(".site_map .list");
+      const $siteClose = $(".site_map .close");
+
+      $depth1.off(NS);
+      $gnb.off(NS);
+      $subBg.off(NS);
+      $siteList.off(NS);
+      $siteClose.off(NS);
+
+      let isPinned = false;
+
+      function openAll(via) {
+        $allDepth2.stop(true, true).slideDown(200);
+        $subBg.stop(true, true).slideDown(200);
+
+        if (via === "pin") {
+          $siteList.stop(true, true).fadeOut(150);
+          $siteClose.stop(true, true).fadeIn(150);
+        }
+      }
+
+      function closeAll() {
+        $allDepth2.stop(true, true).slideUp(150);
+        $subBg.stop(true, true).slideUp(150);
+        $siteList.stop(true, true).fadeIn(150);
+        $siteClose.stop(true, true).fadeOut(150);
+      }
+
+      $allDepth2.hide();
+
+      $depth1.on("mouseenter" + NS, function () {
+        if (!isPinned) openAll();
+      });
+
+      $gnb.on("mouseleave" + NS, function (e) {
+        if (isPinned) return;
+        const $to = $(e.relatedTarget);
+        if ($to.closest("#gnb").length || $to.closest(".sub_bg").length) return;
+        closeAll();
+      });
+
+      $subBg.on("mouseenter" + NS, function () {
+        if (!isPinned) openAll();
+      });
+
+      $subBg.on("mouseleave" + NS, function (e) {
+        if (isPinned) return;
+        const $to = $(e.relatedTarget);
+        if ($to.closest("#gnb").length || $to.closest(".sub_bg").length) return;
+        closeAll();
+      });
+
+      const $siteMap = $(".site_map");
+      $siteMap.off(NS).on("click" + NS, function (e) {
+        e.preventDefault();
+        const btn = this;
+
+        const spans = btn.querySelectorAll("span");
+        spans.forEach(s => window.getComputedStyle(s).transform);
+
+        if (!isPinned) {
+          isPinned = true;
+
+          requestAnimationFrame(() => {
+            btn.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+
+            requestAnimationFrame(() => {
+              openAll("pin");
+            });
+          });
+
+        } else {
+          isPinned = false;
+
+          requestAnimationFrame(() => {
+            btn.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
+
+            requestAnimationFrame(() => {
+              closeAll();
+            });
+          });
+        }
+      });
+    });
+
+    //모바일 메인메뉴
+    $(function () {
+      const NS = ".mo";
+      const DUR = 300;
+      const $btn = $(".site_map");
+      const $mo = $("#mo_gnb");
+      const mq = window.matchMedia("(max-width: 767px)");
+
+      $btn.off("click" + NS);
+
+      $btn.on("click" + NS, function (e) {
+        e.preventDefault();
+
+        if (!mq.matches) return;
+
+        const opening = !$mo.hasClass("open");
+
+        $(this).find("span").each(function () { window.getComputedStyle(this).transform; });
+        window.getComputedStyle($mo[0]).transform;
+
+        if (opening) {
+          this.classList.add("open");
+          this.setAttribute("aria-expanded", "true");
+
+          requestAnimationFrame(() => {
+            $mo.addClass("open");
+          });
+        } else {
+          this.classList.remove("open");
+          this.setAttribute("aria-expanded", "false");
+
+          requestAnimationFrame(() => {
+            $mo.removeClass("open");
+          });
+        }
+      });
+      mq.addEventListener('change', () => {
+        $btn.removeClass('open');
+        $mo.removeClass('open');
+        $btn.attr('aria-expanded', 'false');
+      });
+    });
+
+    //모바일 서브메뉴
+    $(function () {
+      $(this).find("#mo_gnb .mo_depth1 li").mouseenter(function () {
+        $(".sub_bg").hide();
+        $(this).find(".mo_depth2").stop().slideDown();
+      });
+      $(this).find("#mo_gnb .mo_depth1 li").mouseleave(function () {
+        $(".sub_bg").hide();
+        $(this).find(".mo_depth2").stop().slideUp();
+      });
+    });
+
+  </script>
+</body>
+
+</html>
